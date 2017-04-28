@@ -13,3 +13,4 @@ Route::group(['prefix' => 'cities'], function ()
     Route::post('/create', ['as' => 'app.cities.create', 'uses' => 'HOBCitiesController@create']);
 });
 
+
