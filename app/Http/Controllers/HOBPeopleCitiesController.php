@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+
 use App\models\HOBPeople;
 use Illuminate\Routing\Controller;
 

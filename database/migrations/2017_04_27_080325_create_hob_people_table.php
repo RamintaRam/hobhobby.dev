@@ -20,7 +20,7 @@ class CreateHobPeopleTable extends Migration {
 			$table->softDeletes();
 			$table->string('name');
 			$table->string('email');
-			$table->integer('age');
+			$table->string('age');
 			$table->enum('gender', array('M','F'));
 			$table->string('city_id', 36)->index('fk_hob_people_hob_cities1_idx');
 		});

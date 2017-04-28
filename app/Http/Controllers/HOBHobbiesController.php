@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\HOBHobbies;
 use Illuminate\Routing\Controller;
 
 class HOBHobbiesController extends Controller {
@@ -23,7 +24,16 @@ class HOBHobbiesController extends Controller {
 	 */
 	public function create()
 	{
-		//
+        $data = request()->all();
+
+        $record = HOBHobbies::create(array(
+            'name' => $data['hobby'],
+            'description' => $data['description']
+
+        ));
+
+
+        return view('hobby',  $record->toArray());
 	}
 
 	/**

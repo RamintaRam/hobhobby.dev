@@ -3,9 +3,9 @@
 
 class HOBPeople extends CoreModel
 {
-    protected $table = 'hob_cities';
+    protected $table = 'hob_people';
 
-    protected $fillable = ['id', 'name', 'email', 'age', 'gender'];
+    protected $fillable = ['id', 'name', 'email', 'age', 'gender', 'city_id'];
 
 }
 

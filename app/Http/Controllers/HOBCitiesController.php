@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\models\HOBCities;
+use Collective\Html\FormBuilder;
 use Illuminate\Routing\Controller;
 
 class HOBCitiesController extends Controller {
@@ -26,10 +27,13 @@ class HOBCitiesController extends Controller {
     {
         $data = request()->all();
 
-        HOBCities::create(array(
+        $record = HOBCities::create(array(
             'name' => $data['city']
+
         ));
-        dd($data);
+
+
+        return view('main', $record->toArray());
     }
 
 	/**

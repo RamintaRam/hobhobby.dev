@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\HOBCities;
+use App\models\HOBHobbies;
+use App\models\HOBPeople;
 use Illuminate\Routing\Controller;
 
 class HOBPeopleController extends Controller {
@@ -23,9 +26,28 @@ class HOBPeopleController extends Controller {
 	 */
 	public function create()
 	{
-		//
+        $data = request()->all();
+
+        $record = HOBPeople::create($data);
+        dd($data);
+        $record['hobbies'] = HOBHobbies::pluck('name', 'id');
+
+
+
+        return view('people',  $record->toArray());
 	}
 
+
+    public function showCreate()
+    {
+        $configuration=[];
+        $configuration['hobbies'] = HOBHobbies::pluck('name', 'id')->toArray();
+        $configuration['cities']  = HOBCities::pluck('name', 'id')->toArray();
+
+        dd($configuration);
+
+        return view('people',  $configuration);
+    }
 	/**
 	 * Store a newly created resource in storage.
 	 * POST /hobpeople
