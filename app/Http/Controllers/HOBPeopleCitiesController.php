@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\HOBPeople;
 use Illuminate\Routing\Controller;
 
 class HOBPeopleCitiesController extends Controller {
@@ -23,7 +24,7 @@ class HOBPeopleCitiesController extends Controller {
 	 */
 	public function create()
 	{
-		//
+        //
 	}
 
 	/**
